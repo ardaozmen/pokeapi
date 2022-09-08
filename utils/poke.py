@@ -11,13 +11,14 @@ class Pokemon:
     # TODO DocString will be add.
     poke_name = input("Enter the requested Pokemon name: ").lower()
     to_email = input("Enter the email address for forwarding: ").lower()
+    
     def __init__(self):
-        pass
+        self.BASE_URL = "https://pokeapi.co/api/v2/pokemon/{}/"
 
+    
     def fetch_data(self):
-        try:    
-            BASE_URL = "https://pokeapi.co/api/v2/pokemon/{}/"
-            GO_URL = BASE_URL.format(self.poke_name)
+        try:      
+            GO_URL = self.BASE_URL.format(self.poke_name)
             response = requests.get(GO_URL)
             response = response.content
             info = json.loads(response)
@@ -31,22 +32,20 @@ class Pokemon:
 
     
     def get_attr(self):
-        # TODO Some attributes will be added.
+       
         info = self.fetch_data()
-        print()
-        print("POKEMON DETAILS")
-        print()
-        print(f"Pokemon ID: {info['id']}")
-        print(f"Pokemon Name: {info['name']}")
-        print(f"Pokemon Height: {info['height']}")
-        print(f"Pokemon Weight: {info['weight']}")
+        headers = ['Id', 'Name', 'Height', 'Weight']
+        data = [info['id'], info['name'], info['height'], info['weight']]
+        
         for type_ in info['types']:
-            print(f"Pokemon Type: {type_['type']['name']}")   
-        for move_ in range(len(info['moves'])):
-            print(f"Pokemon Moves Slot {move_+1}:  {info['moves'][move_]['move']['name']}")
-        headers = ['id', 'name', 'height', 'weight']
-        data = info['id'], info['name'], info['height'], info['weight']
-        return {headers[i]: list(data)[i] for i in range(len(headers))} 
+            headers.append("Pokemon Type")
+            data.append(type_['type']['name'])
+        
+        for move_ in range(0,len(info['moves'])):    
+            headers.append(f"Pokemon Moves Slot {move_+1}")
+            data.append(info['moves'][move_]['move']['name']) 
+        
+        return {headers[i]: list(data)[i] for i in range(len(headers))}
     
 
     def html_2_pdf(self):
