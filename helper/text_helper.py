@@ -1,0 +1,2 @@
+class TextHelper:
+    pass

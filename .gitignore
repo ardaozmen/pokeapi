@@ -1,0 +1,8 @@
+# Environment
+pokenv/
+
+# Caches
+__pycache__/
+
+# Danger variables
+models/sender.py
