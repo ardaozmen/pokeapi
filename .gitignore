@@ -6,3 +6,6 @@ __pycache__/
 
 # Danger variables
 models/sender.py
+
+# Output Folder
+outputs/
