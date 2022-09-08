@@ -8,10 +8,10 @@ class Pokemon:
     # TODO UnitTesting
     # TODO add pip freeze > requirements.txt
     # TODO model class can be add.
+    # TODO DocString will be add.
     poke_name = input("Enter the requested Pokemon name: ").lower()
     to_email = input("Enter the email address for forwarding: ").lower()
     def __init__(self):
-        # TODO Lower case will be active.
         pass
 
     def fetch_data(self):
