@@ -3,7 +3,7 @@ from utils.poke import Pokemon
 class TextHelper:
     """
     This class was created for enrich 
-    the readability of Training and other classes.
+    the readability of automation process.
     """
     DATA_SCRAPED_STARTED = f"Data scraped started for {Pokemon.poke_name}"
     DATA_SCRAPED_COMPLETED = f"Data scraped completed for {Pokemon.poke_name}"
