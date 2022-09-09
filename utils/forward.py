@@ -1,7 +1,9 @@
 import smtplib
 from email.message import EmailMessage
 from utils.poke import Pokemon
+from helper.logger import logging
 from helper.tools import email_parser
+from helper.text_helper import TextHelper
 from models.sender import Sender
 
 
@@ -16,7 +18,7 @@ class Forward(Pokemon):
 
     def lets_go(self):
         msg = EmailMessage()
-        msg['Subject'] = 'Catch the PokeTop!'
+        msg['Subject'] = 'This is my Platin Bilisim Case Study.'
         msg['From'] = self.EMAIL_ADDRESS 
         msg['To'] = self.to_email
         email_string = email_parser(self.to_email)
@@ -29,3 +31,4 @@ class Forward(Pokemon):
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
             smtp.login(self.EMAIL_ADDRESS, self.EMAIL_PASSWORD) 
             smtp.send_message(msg)
+        logging.info(TextHelper.HTML_TO_PDF_COMPLETED)
