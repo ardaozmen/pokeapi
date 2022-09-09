@@ -8,6 +8,10 @@ from models.sender import Sender
 
 
 class Forward(Pokemon):
+    """
+        This class contains smtplib handlers for E-mailing with SMTP.Gmail.
+
+    """
     
     def __init__(self):
         self.EMAIL_ADDRESS = Sender.sender_email

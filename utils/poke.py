@@ -6,9 +6,10 @@ from helper.text_helper import TextHelper
 from jinja2 import Environment, FileSystemLoader
 
 class Pokemon:
+    """
+        This class contains data handles.
     
-    # TODO UnitTesting
-    # TODO DocString will be add.
+    """
     
     poke_name = input("Enter the requested Pokemon name: ").lower()
     to_email = input("Enter the email address for forwarding: ").lower()
@@ -19,6 +20,14 @@ class Pokemon:
     
 
     def fetch_data(self):
+        """
+            Gets all data from https://pokeapi.co as JSON.
+
+            Return
+            ------
+            :info: JSON dict
+
+        """
         try:      
             logging.info(TextHelper.DATA_SCRAPED_STARTED)
             GO_URL = self.BASE_URL.format(self.poke_name)
@@ -34,7 +43,14 @@ class Pokemon:
 
     
     def get_attr(self):
-        
+        """
+            Parse required attributes from JSON dict.
+
+            Return
+            ------
+            :res: one dimensional dict
+
+        """
         info = self.fetch_data()
         headers = ['Id', 'Name', 'Height', 'Weight']
         data = [info['id'], info['name'], info['height'], info['weight']]
@@ -53,6 +69,19 @@ class Pokemon:
     
 
     def html_2_pdf(self):
+        """
+            Converts dict format to HTML format with Jinja2.
+            Then, converts to HTML format to PDF format with PDFkit.
+
+            Return
+            ------
+            :None:
+
+            Output
+            ------
+            :pdf_file: PDF 
+
+        """
         res = self.get_attr()
         fileLoader = FileSystemLoader("templates")
         env = Environment(loader=fileLoader)
