@@ -14,7 +14,7 @@ class Pokemon:
     
     def __init__(self):
         self.BASE_URL = "https://pokeapi.co/api/v2/pokemon/{}/"
-
+        self.render_name = "pokemon.html"
     
     def fetch_data(self):
         try:      
@@ -53,7 +53,6 @@ class Pokemon:
         fileLoader = FileSystemLoader("templates")
         env = Environment(loader=fileLoader)
         rendered = env.get_template("pokemon.html").render(res=res, title='Pokemon')
-        file_name = "pokemon.html"
-        with open(f"./outputs/{file_name}", "w") as f:
+        with open(f"./outputs/{self.render_name}", "w") as f:
             f.write(rendered)
-        pdfkit.from_file(f'./outputs/{file_name}', f'./outputs/{self.poke_name}.pdf')
+        pdfkit.from_file(f'./outputs/{self.render_name}', f'./outputs/{self.poke_name}.pdf')
