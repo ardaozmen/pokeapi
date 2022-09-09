@@ -6,4 +6,4 @@ if __name__ == "__main__":
     Poke = Pokemon()
     Poke.html_2_pdf()
     sender = Forward()
-    sender.lets_go()
+    sender.send()

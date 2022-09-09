@@ -16,7 +16,7 @@ class Forward(Pokemon):
         self.to_email = Pokemon.to_email
         
 
-    def lets_go(self):
+    def send(self):
         msg = EmailMessage()
         msg['Subject'] = 'This is my Platin Bilisim Case Study.'
         msg['From'] = self.EMAIL_ADDRESS 
@@ -31,4 +31,4 @@ class Forward(Pokemon):
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
             smtp.login(self.EMAIL_ADDRESS, self.EMAIL_PASSWORD) 
             smtp.send_message(msg)
-        logging.info(TextHelper.HTML_TO_PDF_COMPLETED)
+        logging.info(TextHelper.EMAIL_SENT_SUCCESSFULLY)
