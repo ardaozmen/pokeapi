@@ -8,7 +8,6 @@ from jinja2 import Environment, FileSystemLoader
 class Pokemon:
     
     # TODO UnitTesting
-    # TODO add pip freeze > requirements.txt
     # TODO DocString will be add.
     
     poke_name = input("Enter the requested Pokemon name: ").lower()
@@ -18,6 +17,7 @@ class Pokemon:
         self.BASE_URL = "https://pokeapi.co/api/v2/pokemon/{}/"
         self.render_name = "pokemon.html"
     
+
     def fetch_data(self):
         try:      
             logging.info(TextHelper.DATA_SCRAPED_STARTED)
