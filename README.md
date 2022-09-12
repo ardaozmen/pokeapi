@@ -14,6 +14,24 @@ In this project, it is aimed to automate the given task as much as possible. Whi
 
 ### Folder Structure
 
+pokeapi/
+├─ outputs/
+├─ utils/
+│  ├─ poke.py
+│  ├─ forward.py
+├─ helper/
+│  ├─ logger.py
+│  ├─ text_helper.py
+│  ├─ tools.py
+├─ models/
+│  ├─ sender.py
+├─ templates/
+│  ├─ pokemon.html
+├─ .gitignore
+├─ record.log
+├─ README.md
+
+
 ##### References
 - https://pokeapi.co/docs/v2
 - https://pypi.org/project/pdfkit/
