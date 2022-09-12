@@ -13,7 +13,7 @@ In this project, it is aimed to automate the given task as much as possible. Whi
 - ```smtplib```
 
 ### Folder Structure
-
+```
 pokeapi/
 ├─ outputs/
 ├─ utils/
@@ -30,7 +30,7 @@ pokeapi/
 ├─ .gitignore
 ├─ record.log
 ├─ README.md
-
+```
 
 ##### References
 - https://pokeapi.co/docs/v2
