@@ -2,6 +2,9 @@
 
 
 ### Overview
+An automation that pulls the data from Poke API with REST API service and sends Pokemon
+features, abilities in PDF format to the desired email address.
+In this project, it is aimed to automate the given task as much as possible. While creating the project architecture, it was deemed appropriate to establish scalability, dynamism and a class-based (OOP) structure. In this way, it can be applied, changed and developed in different jobs.
 
 ##### Mostly used libraries
 - ```requests```
