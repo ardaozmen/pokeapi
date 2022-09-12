@@ -2,22 +2,26 @@ import json
 import requests
 import pdfkit
 from helper.logger import logging
+from helper.argparser import arguments
 from helper.text_helper import TextHelper
 from jinja2 import Environment, FileSystemLoader
+
 
 class Pokemon:
     """
         This class contains data handles.
     
     """
+
+    args = arguments()
     
-    poke_name = input("Enter the requested Pokemon name: ").lower()
-    to_email = input("Enter the email address for forwarding: ").lower()
+    to_email = args.to_email
+    poke_name = args.poke_name
     
     def __init__(self):
         self.BASE_URL = "https://pokeapi.co/api/v2/pokemon/{}/"
         self.render_name = "pokemon.html"
-    
+
 
     def fetch_data(self):
         """
