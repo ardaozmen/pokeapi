@@ -15,18 +15,18 @@ In this project, it is aimed to automate the given task as much as possible. Whi
 ### Folder Structure
 ```
 pokeapi/
-├─ outputs/
+├─ outputs/             # All outputs store in that folder
 ├─ utils/
-│  ├─ poke.py
-│  ├─ forward.py
+│  ├─ poke.py           # Data Handler
+│  ├─ forward.py        # Email Handler
 ├─ helper/
-│  ├─ logger.py
-│  ├─ text_helper.py
-│  ├─ tools.py
+│  ├─ logger.py         # Logging Config
+│  ├─ text_helper.py    # Text Helper
+│  ├─ tools.py          # Required functions
 ├─ models/
-│  ├─ sender.py
+│  ├─ sender.py         # Email Content Model
 ├─ templates/
-│  ├─ pokemon.html
+│  ├─ pokemon.html      # Default Render
 ├─ .gitignore
 ├─ record.log
 ├─ README.md
