@@ -1,4 +1,4 @@
-### POKE API - Platin Bilisim Case Study
+### POKE API
 
 
 ### Overview
